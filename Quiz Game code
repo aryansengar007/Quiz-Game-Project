@@ -1,0 +1,70 @@
+#include <stdio.h>
+int
+main ()
+{
+  int score = 0;
+  int totalQuestions = 15;
+
+  char questions[][100] = 
+  {
+    "1.Which movie has won the most number of Oscars?",
+    "2.Which film won the Best Picture Oscar in 2019?",
+    "3.Which animated film features a character named Simba?",
+    "4.Which streaming platform is known for the series 'Stranger Things'?",
+    "5.Which actor played the iconic character Jack Dawson in the movie 'Titanic'?",
+    "6.In 'Stranger Things', what is the alternate dimension called?",
+    "7.Which streaming platform is home to the series 'The Boys'?",
+    "8.Who is the protagonist in the TV series 'Sherlock'?",
+    "9.What is the name of the fictional continent in the TV series 'Game of Thrones'?",
+    "10.In 'Breaking Bad', what is the street name of the blue methamphetamine?",
+    "11.Which is the first Sanskrit film?",
+    "12.Which movie won the ‘Best Film’ award at 20th IIFA Awards in 2019?",
+    "13.Which was the first India's talkie film?",
+    "14.Which actor has won the most national awards in India?",
+    "15.Which film won the Oscar for Best Picture in 1972?"
+  };
+
+  char options[][4][50] = 
+  {
+    {"A) Titanic", "B) Cabaret", "C) Jungle Book", "D) Avatar"},
+    {"A) The Shape of Water", "B) La La Land", "C) Parasite", "D) Green Book"},
+    {"A) Finding Nemo", "B) The Lion King", "C) Shrek", "D) Toy Story"},
+    {"A) Netflix", "B) Hulu", "C) Amazon Prime Video", "D) Disney+"},
+    {"A) Leonardo DiCaprio", "B) Brad Pitt", "C) Johnny Depp", "D) Tom Hanks"},
+    {"A) The Netherworld", "B) The Shadow Realm", "C) The Upside Down", "D) The Abyss"},
+    {"A) Amazon Prime Video", "B) Netflix", "C) Hulu", "D) Disney+"},
+    {"A) John Watson", "B) Mycroft Holmes", "C) Sherlock Holmes", "D) Moriarty"},
+    {"A) Westeros", "B) Essos", "C) Sothoryos", "D) Northos"},
+    {"A) Blue Crystal", "B) Blue Thunder", "C) Blue Ice", "D) Blue Sky"},
+    {"A) Bhagavad Gita", "B) Shankaracharya", "C) Gunda", "D) Margazhi Raagam"},
+    {"A) Dhadak", "B) Padmaavat", "C) Raazi", "D) Sanju"},
+    {"A) Alam Ara", "B) Pundlik", "C) Raja Harishchandra", "D) Nal Damayanti"},
+    {"A) Amitabh Bachchan", "B) Salman Khan", "C) Aamir Khan", "D) Shah Rukh Khan"},
+    {"A) Deliverance", "B) The Godfather", "C) Taxi Driver", "D) Cabaret"}
+  };
+
+  char answers[] = { 'A', 'C', 'B', 'A', 'A', 'C', 'A', 'C', 'A', 'D', 'B', 'C', 'A', 'D', 'B' };
+    
+    for(int i = 0; i < totalQuestions; i++) 
+    {
+        printf("%s\n", questions[i]);
+        for(int j = 0; j < 4; j++) 
+        {
+            printf("%s ", options[i][j]);
+        }
+        char userAnswer;
+        printf("\nEnter your answer (A/B/C/D): ");
+        scanf(" %c", &userAnswer);
+        if(userAnswer == answers[i]) 
+        {
+            score++;
+            printf("Correct!\n\n");
+        } 
+        else 
+        {
+            printf("Wrong! The correct answer was %c.\n\n", answers[i]);
+        }
+    }
+    printf("Quiz completed!\nYour score is: %d out of %d\n", score, totalQuestions);
+    return 0;
+}
